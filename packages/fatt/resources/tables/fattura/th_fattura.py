@@ -17,6 +17,7 @@ class View(BaseComponent):
 
 
 
+
     def th_struct_bis(self,struct):
         "Vista alternativa"
         r = struct.view().rows()
