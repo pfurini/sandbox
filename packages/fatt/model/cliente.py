@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
+from gnr.core.gnrdecorator import metadata
+
 
 class Table(object):
     def config_db(self, pkg):
@@ -32,3 +34,6 @@ class Table(object):
                                                   where='$cliente_id=#THIS.id'),
                                       dtype='N',name_long='Tot.Fatturato')
   
+    @metadata(test=1)
+    def bot_fatturato_totale(self,cliente_id=None):
+        return self.readColumns(pkey=cliente_id,columns='$tot_fatturato')
